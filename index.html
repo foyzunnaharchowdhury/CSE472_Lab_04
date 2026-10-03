@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Workshop registration form demonstrating JavaScript objects, JSON, and browser localStorage.">
+    <title>CSE472 Lab 04 | Workshop Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a class="brand" href="#home">
+            <img src="assets/images/logo.png" alt="Southeast University logo">
+            <span>Workshop Hub</span>
+        </a>
+        <nav aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#registration">Registration</a>
+            <a href="#saved-registration">Saved JSON</a>
+        </nav>
+    </header>
+
+    <main id="home">
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">CSE472 | WEB AND INTERNET PROGRAMMING LAB</p>
+                <h1>Workshop Registration</h1>
+                <p class="intro">Register for a practical web development session. Your details are validated, converted to JSON, and saved in this browser.</p>
+            </div>
+            <div class="hero-photo">
+                <img src="assets/images/me.jpg" alt="Foyzun Nahar Chowdhury">
+            </div>
+        </section>
+
+        <section id="registration" class="section-card">
+            <p class="eyebrow">REGISTRATION FORM</p>
+            <h2>Enter your information</h2>
+            <p class="section-intro">All fields are required. A successful registration is saved in localStorage and can be downloaded as a JSON file.</p>
+            <form id="registrationForm" novalidate>
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="studentName">Full Name</label>
+                        <input type="text" id="studentName" name="studentName" autocomplete="name" required>
+                    </div>
+                    <div class="field">
+                        <label for="studentId">Student ID</label>
+                        <input type="text" id="studentId" name="studentId" autocomplete="off" required>
+                    </div>
+                    <div class="field">
+                        <label for="studentEmail">Email Address</label>
+                        <input type="email" id="studentEmail" name="studentEmail" autocomplete="email" required>
+                    </div>
+                    <div class="field">
+                        <label for="workshop">Workshop</label>
+                        <select id="workshop" name="workshop" required>
+                            <option value="">Select a workshop</option>
+                            <option value="HTML Basics">HTML Basics</option>
+                            <option value="CSS Basics">CSS Basics</option>
+                            <option value="JavaScript Basics">JavaScript Basics</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit">Register</button>
+                    <button type="button" id="clearForm" class="button-secondary">Clear Form</button>
+                </div>
+                <p id="formMessage" class="message" role="status" aria-live="polite">Complete the form to create a registration.</p>
+            </form>
+        </section>
+
+        <section id="saved-registration" class="section-card">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">JSON AND BROWSER STORAGE</p>
+                    <h2>Registration data</h2>
+                </div>
+                <div class="form-actions compact-actions">
+                    <button type="button" id="downloadJson" class="button-secondary" disabled>Download JSON</button>
+                    <button type="button" id="removeRegistration" class="button-danger" disabled>Remove Saved Data</button>
+                </div>
+            </div>
+            <p class="section-intro">The formatted JSON below is the data saved for this browser. Refreshing the page restores it from localStorage.</p>
+            <pre id="jsonOutput" class="json-output" aria-label="Registration JSON">No registration has been saved yet.</pre>
+            <p id="storageMessage" class="storage-message" role="status" aria-live="polite">No saved registration found.</p>
+        </section>
+
+        <section class="section-card student-card">
+            <div>
+                <p class="eyebrow">STUDENT PROFILE</p>
+                <h2>About the Participant</h2>
+                <p>This CSE472 Lab 04 page demonstrates form input, validation, JavaScript objects, JSON conversion, and localStorage.</p>
+            </div>
+            <div class="student-details">
+                <span>Student Name</span>
+                <strong>Foyzun Nahar Chowdhury</strong>
+                <span>Student ID</span>
+                <strong>2023100000106</strong>
+                <span>Email</span>
+                <strong>2023100000106@seu.edu.bd</strong>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>CSE472 Lab 04 | Student Workshop Registration System</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
